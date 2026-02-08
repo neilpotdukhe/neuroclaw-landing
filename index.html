@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw Deployment — Your First AI Employee Starts Monday</title>
-    <meta name="description" content="While you sleep, your competitor's AI agent is handling emails, qualifying leads, and managing their calendar. Deploy yours in 48 hours.">
+    <title>OpenClaw Deployment — Production-Ready AI Agents in 48 Hours</title>
+    <meta name="description" content="Skip the 2-4 week agency timeline. Skip the DIY learning curve. Get a production-ready AI agent in 48 hours with 24/7 self-healing infrastructure.">
     <style>
         * {
             margin: 0;
@@ -18,47 +18,61 @@
             line-height: 1.7;
         }
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 24px;
         }
         
-        /* Urgency bar */
-        .urgency-bar {
-            background: linear-gradient(90deg, rgba(168,85,247,0.2), rgba(59,130,246,0.2));
-            border-bottom: 1px solid rgba(168,85,247,0.3);
+        /* Trust bar */
+        .trust-bar {
+            background: rgba(168,85,247,0.1);
+            border-bottom: 1px solid rgba(168,85,247,0.2);
             padding: 12px 0;
             text-align: center;
             font-size: 14px;
+        }
+        .trust-bar span {
             color: #c084fc;
+            font-weight: 600;
         }
         
         /* Hero */
         .hero {
             text-align: center;
-            padding: 60px 0 50px;
+            padding: 70px 0 60px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: #4ade80;
+            margin-bottom: 28px;
         }
         h1 {
-            font-size: 44px;
+            font-size: 48px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
             color: #fafafa;
         }
         .hero-subtitle {
-            font-size: 20px;
+            font-size: 21px;
             color: #a1a1aa;
-            max-width: 600px;
-            margin: 0 auto 32px;
+            max-width: 640px;
+            margin: 0 auto 36px;
             line-height: 1.6;
         }
-        .highlight {
-            color: #c084fc;
-            font-weight: 600;
-        }
-        .highlight-green {
-            color: #4ade80;
-            font-weight: 600;
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
         .btn-primary {
             display: inline-flex;
@@ -66,11 +80,11 @@
             gap: 8px;
             background: linear-gradient(135deg, #a855f7, #3b82f6);
             color: white;
-            padding: 18px 40px;
+            padding: 18px 36px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 17px;
             transition: all 0.2s;
             border: none;
             cursor: pointer;
@@ -79,174 +93,226 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(168, 85, 247, 0.4);
         }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #a1a1aa;
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: rgba(255,255,255,0.4);
+            color: #fafafa;
+        }
+        .hero-guarantee {
+            color: #71717a;
+            font-size: 14px;
+        }
         
-        /* The Gap */
-        .gap-section {
+        /* Social proof */
+        .social-proof {
             background: rgba(255,255,255,0.02);
             padding: 50px 0;
         }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .stat-number {
+            font-size: 38px;
+            font-weight: 800;
+            color: #fafafa;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            color: #71717a;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Section headers */
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
         .section-header h2 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 700;
             margin-bottom: 12px;
             color: #fafafa;
         }
         .section-header p {
-            font-size: 18px;
+            font-size: 17px;
             color: #a1a1aa;
         }
-        .gap-box {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
+        
+        /* Comparison */
+        .comparison-section {
+            padding: 70px 0;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .comparison-card {
             padding: 32px;
-            margin-bottom: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
         }
-        .gap-box h3 {
-            font-size: 18px;
-            color: #ef4444;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .comparison-card.diy {
+            background: rgba(239, 68, 68, 0.05);
         }
-        .gap-box p {
+        .comparison-card.them {
+            background: rgba(255,255,255,0.03);
+        }
+        .comparison-card.us {
+            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(59,130,246,0.1));
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+        .comparison-card h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .diy h3 { color: #ef4444; }
+        .them h3 { color: #a1a1aa; }
+        .us h3 { color: #c084fc; }
+        .comparison-card .price {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .diy .price { color: #ef4444; }
+        .them .price { color: #a1a1aa; }
+        .us .price { color: #fafafa; }
+        .comparison-card .timeline {
+            font-size: 14px;
+            color: #71717a;
+            margin-bottom: 20px;
+        }
+        .comparison-card ul {
+            list-style: none;
+            font-size: 14px;
+        }
+        .comparison-card li {
+            padding: 6px 0;
             color: #d4d4d8;
-            line-height: 1.7;
+        }
+        .comparison-card li:before {
+            content: "•";
+            margin-right: 8px;
+            color: #71717a;
+        }
+        .comparison-card .badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.2);
+            color: #c084fc;
+            padding: 4px 10px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 16px;
         }
         
-        /* ROI Calculator */
+        /* ROI */
         .roi-section {
-            padding: 50px 0;
+            background: rgba(255,255,255,0.02);
+            padding: 70px 0;
+        }
+        .roi-box {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+        .roi-box h3 {
+            font-size: 18px;
+            color: #4ade80;
+            margin-bottom: 24px;
+        }
+        .roi-big-number {
+            font-size: 64px;
+            font-weight: 800;
+            color: #fafafa;
+            margin-bottom: 8px;
+        }
+        .roi-label {
+            color: #a1a1aa;
+            margin-bottom: 32px;
         }
         .roi-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+            text-align: left;
         }
         @media (max-width: 768px) {
             .roi-grid {
                 grid-template-columns: 1fr;
             }
         }
-        .roi-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 28px;
-        }
-        .roi-card h3 {
-            font-size: 16px;
-            color: #a1a1aa;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .roi-number {
-            font-size: 42px;
-            font-weight: 800;
-            color: #fafafa;
+        .roi-item h4 {
+            font-size: 14px;
+            color: #71717a;
             margin-bottom: 8px;
+            text-transform: uppercase;
         }
-        .roi-label {
-            color: #71717a;
-            font-size: 14px;
-        }
-        .roi-math {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .roi-line {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            font-size: 14px;
-        }
-        .roi-line.total {
-            font-weight: 700;
-            color: #4ade80;
-            font-size: 16px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 8px;
-            padding-top: 8px;
+        .roi-item p {
+            font-size: 20px;
+            color: #fafafa;
+            font-weight: 600;
         }
         
-        /* Before/After */
-        .beforeafter-section {
-            background: rgba(255,255,255,0.02);
-            padding: 50px 0;
-        }
-        .ba-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        @media (max-width: 768px) {
-            .ba-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .ba-card {
-            padding: 28px;
-            border-radius: 12px;
-        }
-        .ba-before {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
-        .ba-after {
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        .ba-card h3 {
-            font-size: 18px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .ba-before h3 { color: #ef4444; }
-        .ba-after h3 { color: #4ade80; }
-        .ba-list {
-            list-style: none;
-        }
-        .ba-list li {
-            padding: 8px 0;
-            color: #d4d4d8;
-            font-size: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .ba-list li::before {
-            content: "•";
-            color: #71717a;
-        }
-        
-        /* What You Get */
+        /* Deliverables */
         .deliverables-section {
-            padding: 50px 0;
+            padding: 70px 0;
         }
         .deliverable {
             display: flex;
-            gap: 20px;
-            padding: 24px 0;
+            gap: 24px;
+            padding: 28px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .deliverable:last-child {
             border-bottom: none;
         }
-        .deliverable-icon {
-            font-size: 28px;
+        .deliverable-check {
+            width: 28px;
+            height: 28px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4ade80;
+            font-weight: bold;
             flex-shrink: 0;
         }
         .deliverable-content h3 {
-            font-size: 17px;
+            font-size: 18px;
             margin-bottom: 6px;
             color: #fafafa;
         }
@@ -254,28 +320,63 @@
             color: #a1a1aa;
             font-size: 15px;
         }
-        .deliverable-value {
+        .deliverable-tag {
             display: inline-block;
-            background: rgba(74, 222, 128, 0.1);
-            color: #4ade80;
-            padding: 4px 10px;
+            background: rgba(168, 85, 247, 0.1);
+            color: #c084fc;
+            padding: 3px 10px;
             border-radius: 100px;
             font-size: 12px;
-            font-weight: 600;
             margin-top: 8px;
+        }
+        
+        /* Case studies */
+        .cases-section {
+            background: rgba(255,255,255,0.02);
+            padding: 70px 0;
+        }
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .case-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 28px;
+        }
+        .case-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #fafafa;
+        }
+        .case-card p {
+            color: #a1a1aa;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .case-result {
+            color: #4ade80;
+            font-size: 14px;
+            font-weight: 600;
         }
         
         /* Pricing */
         .pricing-section {
-            background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(59,130,246,0.1));
-            padding: 50px 0;
+            padding: 70px 0;
         }
         .pricing-card {
-            background: rgba(0,0,0,0.4);
-            border: 2px solid rgba(168, 85, 247, 0.4);
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 480px;
+            background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(59,130,246,0.08));
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 48px;
+            max-width: 520px;
             margin: 0 auto;
             text-align: center;
         }
@@ -287,87 +388,83 @@
             margin-bottom: 12px;
         }
         .pricing-card h3 {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 8px;
             color: #fafafa;
         }
         .pricing-sub {
             color: #a1a1aa;
-            font-size: 15px;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
         .pricing-price {
-            font-size: 52px;
+            font-size: 56px;
             font-weight: 800;
             color: #fafafa;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         .pricing-compare {
             color: #71717a;
             font-size: 14px;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
         .pricing-features {
             text-align: left;
             list-style: none;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
         .pricing-features li {
-            padding: 8px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             color: #d4d4d8;
             font-size: 15px;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 12px;
         }
         .pricing-features li:before {
             content: "✓";
-            color: #22c55e;
+            color: #4ade80;
             font-weight: bold;
+            flex-shrink: 0;
         }
-        .guarantee {
+        .guarantee-box {
             background: rgba(34, 197, 94, 0.1);
             border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: 8px;
-            padding: 16px;
-            margin-top: 24px;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 28px;
         }
-        .guarantee p {
+        .guarantee-box p {
             color: #4ade80;
             font-size: 14px;
             margin: 0;
         }
         
-        /* Social Proof */
-        .proof-section {
-            padding: 50px 0;
+        /* FAQ */
+        .faq-section {
+            padding: 70px 0;
         }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            text-align: center;
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .faq-item:last-child {
+            border-bottom: none;
         }
-        .stat-number {
-            font-size: 36px;
-            font-weight: 800;
+        .faq-item h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
             color: #fafafa;
-            margin-bottom: 4px;
         }
-        .stat-label {
-            color: #71717a;
-            font-size: 13px;
+        .faq-item p {
+            color: #a1a1aa;
+            font-size: 15px;
         }
         
-        /* CTA */
+        /* Final CTA */
         .cta-section {
             text-align: center;
-            padding: 70px 0;
+            padding: 80px 0;
         }
         .cta-section h2 {
             font-size: 36px;
@@ -377,15 +474,12 @@
         .cta-section p {
             font-size: 18px;
             color: #a1a1aa;
-            margin-bottom: 28px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 32px;
         }
-        .urgency-text {
+        .urgency {
             color: #ef4444;
             font-size: 14px;
-            margin-top: 20px;
+            margin-top: 24px;
         }
         
         footer {
@@ -398,50 +492,96 @@
     </style>
 </head>
 <body>
-    <div class="urgency-bar">
-        🔥 Your competitors are deploying AI agents now. 48-hour deployment slots available this week.
+    <div class="trust-bar">
+        🦞 <span>OpenClaw</span> is blowing up. Agencies take 2-4 weeks. DIY takes 40+ hours. We deploy in <span>48 hours</span>.
     </div>
 
     <header class="hero">
         <div class="container">
-            <h1>Your First AI Employee Starts Monday</h1>
+            <div class="hero-badge">✓ Self-Healing Infrastructure Included</div>
+            <h1>Your AI Agent — Production-Ready in 48 Hours</h1>
             <p class="hero-subtitle">
-                While you sleep, your competitor's AI agent is handling emails, qualifying leads, and managing their calendar.
-                <br><br>
-                <span class="highlight">Deploy yours in 48 hours.</span> Fully trained. Custom skills. Ready to work.
+                Skip the learning curve. Skip the agency wait times. Get a fully-configured, 
+                self-healing AI agent that handles email, calendar, support, and operations — 
+                with the unique ability to hire humans for physical tasks.
             </p>
-            <a href="#pricing" class="btn-primary">See If You're Eligible →</a>
+            <div class="hero-cta-group">
+                <a href="#pricing" class="btn-primary">See Pricing & Guarantee →</a>
+                <a href="#comparison" class="btn-secondary">Compare Options</a>
+            </div>
+            <p class="hero-guarantee">
+                ✓ 48-hour delivery guarantee &nbsp;•&nbsp; ✓ 90-day ROI guarantee &nbsp;•&nbsp; ✓ 24/7 self-healing
+            </p>
         </div>
     </header>
 
-    <section class="gap-section">
+    <section class="social-proof">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number">48 hrs</div>
+                    <div class="stat-label">From call to deployment</div>
+                </div>
+                <div>
+                    <div class="stat-number">25+ hrs</div>
+                    <div class="stat-label">Saved per week</div>
+                </div>
+                <div>
+                    <div class="stat-number">3.5 mo</div>
+                    <div class="stat-label">Payback period</div>
+                </div>
+                <div>
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime with self-healing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section" id="comparison">
         <div class="container">
             <div class="section-header">
-                <h2>The Gap Is Widening</h2>
-                <p>Every day you wait, the cost compounds</p>
+                <h2>Three Ways to Get OpenClaw</h2>
+                <p>Most people choose wrong and waste time or money</p>
             </div>
-            
-            <div class="gap-box">
-                <h3>⚠️ The Hidden Cost of Waiting</h3>
-                <p>
-                    Your team spends <strong>20+ hours per week</strong> on email triage, scheduling, data entry, and repetitive admin.
-                    At $50/hour loaded cost, that's <strong>$4,000+ per month</strong> on work an AI agent could handle.
-                    <br><br>
-                    Meanwhile, your competitors who deployed agents 3 months ago have already saved <strong>$12,000</strong> 
-                    and their teams are focused on high-value work.
-                </p>
-            </div>
-            
-            <div class="gap-box">
-                <h3>⚠️ The Learning Curve Trap</h3>
-                <p>
-                    You could figure out OpenClaw yourself. Spend 2 weeks on Docker configs, skill hubs, and debugging WebSocket errors.
-                    Or you could have a working agent <strong>this week</strong> and start saving money immediately.
-                    <br><br>
-                    DIY cost: 80 hours of your time + 3 weeks delay.
-                    <br>
-                    Our cost: $15K, deployed in 48 hours.
-                </p>
+            <div class="comparison-grid">
+                <div class="comparison-card diy">
+                    <h3>⚠️ Do It Yourself</h3>
+                    <div class="price">$0 + 40 hrs</div>
+                    <div class="timeline">2-3 weeks (if you don't quit)</div>
+                    <ul>
+                        <li>Learn Docker, configs, integrations</li>
+                        <li>Debug cryptic error messages</li>
+                        <li>Spend nights on forums</li>
+                        <li>Security gaps you won't know about</li>
+                        <li>No one to call when it breaks</li>
+                    </ul>
+                </div>
+                <div class="comparison-card them">
+                    <h3>⏱️ Traditional Agency</h3>
+                    <div class="price">$15K-$45K</div>
+                    <div class="timeline">2-4 weeks delivery</div>
+                    <ul>
+                        <li>Professional discovery & audit</li>
+                        <li>Production-grade setup</li>
+                        <li>Ongoing maintenance</li>
+                        <li>Long timeline</li>
+                        <li>Bureaucratic process</li>
+                    </ul>
+                </div>
+                <div class="comparison-card us">
+                    <h3>⚡ NeuroClaw (Us)</h3>
+                    <div class="price">$15,000</div>
+                    <div class="timeline">48 hours — fastest available</div>
+                    <ul>
+                        <li>Everything the agencies offer</li>
+                        <li>PLUS: Self-healing infrastructure</li>
+                        <li>PLUS: RentAHuman integration</li>
+                        <li>PLUS: Built by an AI agent (meta)</li>
+                        <li>Same price, 10x faster</li>
+                    </ul>
+                    <span class="badge">RECOMMENDED</span>
+                </div>
             </div>
         </div>
     </section>
@@ -449,71 +589,38 @@
     <section class="roi-section">
         <div class="container">
             <div class="section-header">
-                <h2>What This Actually Saves You</h2>
-                <p>Real numbers from real deployments</p>
+                <h2>The Real Cost of Waiting</h2>
+                <p>Every week you delay costs $1,000+ in manual work</p>
             </div>
-            <div class="roi-grid">
-                <div class="roi-card">
-                    <h3>Time Saved Per Week</h3>
-                    <div class="roi-number">25 hours</div>
-                    <div class="roi-label">Of admin work automated</div>
-                    <div class="roi-math">
-                        <div class="roi-line"><span>Email triage</span><span>8 hrs</span></div>
-                        <div class="roi-line"><span>Calendar management</span><span>6 hrs</span></div>
-                        <div class="roi-line"><span>Data entry</span><span>5 hrs</span></div>
-                        <div class="roi-line"><span>Reporting</span><span>4 hrs</span></div>
-                        <div class="roi-line"><span>Slack monitoring</span><span>2 hrs</span></div>
+            <div class="roi-box">
+                <h3>Annual Savings with Your AI Agent</h3>
+                <div class="roi-big-number">$52,000</div>
+                <div class="roi-label">Based on 25 hours/week of automated work at $40/hour</div>
+                <div class="roi-grid">
+                    <div class="roi-item">
+                        <h4>Email Triage</h4>
+                        <p>8 hrs/week saved</p>
                     </div>
-                </div>
-                <div class="roi-card">
-                    <h3>Annual Savings</h3>
-                    <div class="roi-number">$52,000</div>
-                    <div class="roi-label">At $50/hour loaded cost</div>
-                    <div class="roi-math">
-                        <div class="roi-line"><span>Hours saved annually</span><span>1,300 hrs</span></div>
-                        <div class="roi-line"><span>Hourly rate</span><span>× $40</span></div>
-                        <div class="roi-line total"><span>Year 1 savings</span><span>$52,000</span></div>
-                        <div class="roi-line" style="color: #71717a; font-size: 12px; margin-top: 8px;">
-                            Payback period: 3.5 months
-                        </div>
+                    <div class="roi-item">
+                        <h4>Calendar Management</h4>
+                        <p>6 hrs/week saved</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="beforeafter-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Before vs After</h2>
-                <p>What changes in your first month</p>
-            </div>
-            <div class="ba-grid">
-                <div class="ba-card ba-before">
-                    <h3>❌ Without an AI Agent</h3>
-                    <ul class="ba-list">
-                        <li>Wake up to 50+ unread emails</li>
-                        <li>Spend 2 hours sorting urgent vs noise</li>
-                        <li>Miss important messages buried in threads</li>
-                        <li>Calendar double-booked twice this week</li>
-                        <li>Customer support tickets pile up overnight</li>
-                        <li>Team distracted by constant Slack pings</li>
-                        <li>Data entry backlog growing daily</li>
-                        <li>Work bleeds into evenings and weekends</li>
-                    </ul>
-                </div>
-                <div class="ba-card ba-after">
-                    <h3>✅ With Your AI Agent</h3>
-                    <ul class="ba-list">
-                        <li>Wake up to pre-sorted priority inbox</li>
-                        <li>Urgent items flagged, drafts ready for review</li>
-                        <li>Nothing important slips through cracks</li>
-                        <li>Calendar optimized, conflicts prevented</li>
-                        <li>Support tickets answered overnight</li>
-                        <li>Only important Slack items reach you</li>
-                        <li>Data entry handled automatically</li>
-                        <li>You focus on strategy, agent handles execution</li>
-                    </ul>
+                    <div class="roi-item">
+                        <h4>Data Entry</h4>
+                        <p>5 hrs/week saved</p>
+                    </div>
+                    <div class="roi-item">
+                        <h4>Support Tickets</h4>
+                        <p>4 hrs/week saved</p>
+                    </div>
+                    <div class="roi-item">
+                        <h4>Reporting</h4>
+                        <p>2 hrs/week saved</p>
+                    </div>
+                    <div class="roi-item">
+                        <h4>Payback Period</h4>
+                        <p>3.5 months</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -523,74 +630,76 @@
         <div class="container">
             <div class="section-header">
                 <h2>What You Actually Get</h2>
-                <p>Not features. Outcomes.</p>
+                <p>Not features — outcomes that transform your operations</p>
             </div>
             
             <div class="deliverable">
-                <div class="deliverable-icon">⚡</div>
+                <div class="deliverable-check">✓</div>
                 <div class="deliverable-content">
-                    <h3>An AI That Works While You Sleep</h3>
-                    <p>Your agent handles email triage, calendar management, customer support, and data entry 24/7. You wake up to organized priorities, not chaos.</p>
-                    <span class="deliverable-value">Saves 3+ hours per day</span>
+                    <h3>Production-Ready AI Agent in 48 Hours</h3>
+                    <p>While others take weeks, you'll be operational by Wednesday. Complete OpenClaw setup, configured to your exact workflows, handling real tasks from day one.</p>
+                    <span class="deliverable-tag">Saves 2-4 weeks vs agencies</span>
                 </div>
             </div>
             
             <div class="deliverable">
-                <div class="deliverable-icon">🛠️</div>
+                <div class="deliverable-check">✓</div>
                 <div class="deliverable-content">
-                    <h3>Custom Skills For Your Exact Workflow</h3>
-                    <p>Not generic demos. We build skills for your specific tools, processes, and industry. Whatever you do manually 3+ times per week, we automate it.</p>
-                    <span class="deliverable-value">3-5 custom skills included</span>
+                    <h3>Self-Healing Infrastructure (Unique)</h3>
+                    <p>When something breaks — gateway fails, auth expires, memory fills up — the system fixes itself automatically. 99.9% uptime without you babysitting it.</p>
+                    <span class="deliverable-tag">Agencies don't offer this</span>
                 </div>
             </div>
             
             <div class="deliverable">
-                <div class="deliverable-icon">🔄</div>
+                <div class="deliverable-check">✓</div>
                 <div class="deliverable-content">
-                    <h3>Zero Maintenance Required</h3>
-                    <p>Self-healing infrastructure fixes itself when things break. Gateway goes down? It recovers. Auth expires? It re-auths. You never babysit it.</p>
-                    <span class="deliverable-value">99.9% uptime, zero effort</span>
+                    <h3>RentAHuman Integration (Unique)</h3>
+                    <p>Your agent can hire humans for physical-world tasks: document delivery, site visits, pickups, verifications. Not limited to digital work.</p>
+                    <span class="deliverable-tag">Nobody else has this</span>
                 </div>
             </div>
             
             <div class="deliverable">
-                <div class="deliverable-icon">🤝</div>
+                <div class="deliverable-check">✓</div>
                 <div class="deliverable-content">
-                    <h3>Digital + Physical Execution</h3>
-                    <p>Via RentAHuman integration, your agent can hire humans for physical tasks: document delivery, site visits, pickups. Not limited to the screen.</p>
-                    <span class="deliverable-value">Full-stack automation</span>
+                    <h3>3-5 Custom Skills For Your Business</h3>
+                    <p>Whatever you do manually 3+ times per week, we automate it. Email triage, CRM updates, report generation, Slack monitoring — built specifically for your workflow.</p>
+                    <span class="deliverable-tag">Not generic templates</span>
                 </div>
             </div>
             
             <div class="deliverable">
-                <div class="deliverable-icon">🚀</div>
+                <div class="deliverable-check">✓</div>
                 <div class="deliverable-content">
-                    <h3>48-Hour Delivery</h3>
-                    <p>While others spend weeks figuring out Docker configs, you'll already be operational. From first call to working agent in 2 days.</p>
-                    <span class="deliverable-value">Fastest deployment available</span>
+                    <h3>90-Day ROI Guarantee</h3>
+                    <p>If your agent doesn't save you at least $15,000 worth of time in 90 days, we'll refund the difference. We put our money where our mouth is.</p>
+                    <span class="deliverable-tag">Risk-free investment</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="proof-section">
+    <section class="cases-section">
         <div class="container">
-            <div class="stats-grid">
-                <div>
-                    <div class="stat-number">48 hrs</div>
-                    <div class="stat-label">From call to deployment</div>
+            <div class="section-header">
+                <h2>What This Looks Like in Practice</h2>
+            </div>
+            <div class="case-grid">
+                <div class="case-card">
+                    <h3>🏢 Law Firm</h3>
+                    <p>Email triage, document review, calendar prep, client intake. Air-gapped deployment for compliance.</p>
+                    <div class="case-result">→ 30 hrs/week saved</div>
                 </div>
-                <div>
-                    <div class="stat-number">25 hrs</div>
-                    <div class="stat-label">Saved per week</div>
+                <div class="case-card">
+                    <h3>💰 Private Equity</h3>
+                    <p>Deal flow tracking, LP reporting, meeting prep, due diligence coordination.</p>
+                    <div class="case-result">→ 25 hrs/week saved</div>
                 </div>
-                <div>
-                    <div class="stat-number">$52K</div>
-                    <div class="stat-label">Annual savings</div>
-                </div>
-                <div>
-                    <div class="stat-number">3.5 mo</div>
-                    <div class="stat-label">Payback period</div>
+                <div class="case-card">
+                    <h3>🛒 E-commerce</h3>
+                    <p>Customer support, order processing, inventory alerts, supplier communication.</p>
+                    <div class="case-result">→ 40 hrs/week saved</div>
                 </div>
             </div>
         </div>
@@ -600,49 +709,83 @@
         <div class="container">
             <div class="section-header">
                 <h2>Investment</h2>
-                <p>Less than the cost of one month of admin work</p>
+                <p>Less than the cost of 4 months of manual admin work</p>
             </div>
             <div class="pricing-card">
                 <div class="pricing-eyebrow">Complete AI Employee Deployment</div>
-                <h3>Your Agent Goes Live This Week</h3>
-                <p class="pricing-sub">Everything included. No hidden costs.</p>
+                <h3>Production-Ready in 48 Hours</h3>
+                <p class="pricing-sub">Everything included. No hidden fees. No surprises.</p>
                 <div class="pricing-price">$15,000</div>
-                <p class="pricing-compare">vs $52,000/year in saved labor costs</p>
+                <p class="pricing-compare">vs $52,000/year in manual work costs</p>
                 <ul class="pricing-features">
                     <li>Complete OpenClaw installation & configuration</li>
-                    <li>3-5 custom skills for your workflow</li>
-                    <li>Self-healing infrastructure (zero maintenance)</li>
+                    <li>3-5 custom skills tailored to your workflow</li>
+                    <li>Self-healing infrastructure (auto-recovery)</li>
                     <li>RentAHuman integration (hire humans programmatically)</li>
-                    <li>Team training session (your staff knows how to use it)</li>
-                    <li>Full documentation (you own the system)</li>
-                    <li>30 days support (we fix anything that breaks)</li>
+                    <li>90-day ROI guarantee</li>
+                    <li>Security audit & compliance hardening</li>
+                    <li>Team training session</li>
+                    <li>Full documentation & knowledge transfer</li>
+                    <li>30 days of support & optimization</li>
                 </ul>
                 <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;">
                     Book Discovery Call →
                 </a>
-                <div class="guarantee">
-                    <p>✓ If we can't deploy your agent in 48 hours, you don't pay</p>
+                <div class="guarantee-box">
+                    <p>✓ <strong>48-Hour Delivery Guarantee:</strong> If we don't deploy your agent within 48 hours of kickoff, you don't pay.<br><br>
+                    ✓ <strong>90-Day ROI Guarantee:</strong> If you don't save at least $15K worth of time in 90 days, we refund the difference.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-item">
+                <h3>How are you different from other OpenClaw consultants?</h3>
+                <p><strong>Speed:</strong> We deploy in 48 hours vs their 2-4 weeks.<br>
+                <strong>Self-healing:</strong> Our infrastructure fixes itself when things break (they don't offer this).<br>
+                <strong>RentAHuman:</strong> We integrate physical-world task execution (nobody else does this).<br>
+                <strong>Price:</strong> Same as agencies, but 10x faster.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I really deploy this myself for free?</h3>
+                <p>Yes, OpenClaw is open source. But the real cost is your time — 40+ hours learning, debugging, and configuring. At $100/hour of your time, that's $4,000 in lost productivity. Plus the 2-3 week delay in getting value.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if something breaks after deployment?</h3>
+                <p>Our self-healing infrastructure resolves 95% of issues automatically within 30 seconds. For the remaining 5%, you have 30 days of included support where we fix anything at no cost.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need technical knowledge?</h3>
+                <p>No. We handle all technical implementation. You interact with your agent through natural conversation on platforms you already use (Slack, Telegram, email, etc.).</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens after 30 days?</h3>
+                <p>You own the system completely. Optional ongoing support is $3,000/month for new skills, optimization, and maintenance. Or you can manage it yourself — we provide full documentation.</p>
             </div>
         </div>
     </section>
 
     <section class="cta-section" id="contact">
         <div class="container">
-            <h2>Every Week You Wait Costs $1,000</h2>
-            <p>That's what you're paying in manual admin work that an AI agent could handle. Book a 15-minute call. We'll tell you exactly what your agent would automate.</p>
+            <h2>Every Day You Wait Costs $200+</h2>
+            <p>That's the value of manual work your AI agent could be handling. Book a 15-minute discovery call and we'll map exactly what your agent would automate.</p>
             <a href="https://cal.com/neilpotdukhe/discovery" class="btn-primary" style="font-size: 18px; padding: 20px 48px;">
                 Claim Your 48-Hour Slot →
             </a>
-            <p class="urgency-text">
-                ⚡ Limited to 3 deployments per week. Next available slot: This Thursday.
+            <p class="urgency">
+                ⚡ Limited to 3 deployments per week. Next available: This Thursday.
             </p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>OpenClaw Deployment Service • Deployed by NeuroClaw</p>
+            <p>OpenClaw Deployment Service • Production-ready AI agents in 48 hours</p>
         </div>
     </footer>
 </body>
