@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw Deployment Service — Get Your AI Agent Running in 48 Hours</title>
-    <meta name="description" content="OpenClaw is blowing up but most people get stuck at day 2. We deploy fully-configured autonomous agents for law firms, PE, and accounting. Done-for-you setup.">
+    <title>OpenClaw Deployment — Your AI Employee in 48 Hours</title>
+    <meta name="description" content="OpenClaw is blowing up. Everyone sees the demos. Most get stuck at day 2. We deploy fully-working AI agents for businesses in 48 hours. Skip the learning curve.">
     <style>
         * {
             margin: 0;
@@ -41,7 +41,7 @@
             margin-bottom: 32px;
         }
         h1 {
-            font-size: 52px;
+            font-size: 48px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -83,35 +83,6 @@
             background: rgba(255,255,255,0.02);
             padding: 60px 0;
         }
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            .problem-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .problem-item {
-            text-align: center;
-        }
-        .problem-icon {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        .problem-item h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: #fafafa;
-        }
-        .problem-item p {
-            color: #a1a1aa;
-            font-size: 15px;
-        }
-        
-        /* Section headers */
         .section-header {
             text-align: center;
             margin-bottom: 48px;
@@ -126,37 +97,84 @@
             font-size: 18px;
             color: #a1a1aa;
         }
+        .problem-box {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .problem-box p {
+            font-size: 18px;
+            color: #d4d4d8;
+            line-height: 1.7;
+        }
         
         /* What You Get */
         .features-section {
             padding: 80px 0;
         }
-        .feature-list {
-            display: flex;
-            flex-direction: column;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
-        .feature-item {
-            display: flex;
-            gap: 24px;
-            padding: 32px;
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .feature-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
+            padding: 32px;
         }
-        .feature-check {
-            font-size: 28px;
-            color: #22c55e;
-            flex-shrink: 0;
-        }
-        .feature-content h3 {
-            font-size: 20px;
+        .feature-card h3 {
+            font-size: 18px;
             margin-bottom: 8px;
             color: #fafafa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .feature-content p {
+        .feature-card p {
             color: #a1a1aa;
             font-size: 15px;
+        }
+        
+        /* Use Cases */
+        .usecases-section {
+            background: rgba(255,255,255,0.02);
+            padding: 80px 0;
+        }
+        .usecase-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .usecase-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+        }
+        .usecase-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .usecase-content h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: #fafafa;
+        }
+        .usecase-content p {
+            color: #a1a1aa;
+            font-size: 14px;
         }
         
         /* Pricing */
@@ -229,75 +247,42 @@
         .process-section {
             padding: 80px 0;
         }
-        .process-steps {
+        .process-simple {
             display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .process-step {
-            display: flex;
+            justify-content: space-between;
             gap: 24px;
-            padding: 32px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            max-width: 700px;
+            margin: 0 auto;
         }
-        .process-step:last-child {
-            border-bottom: none;
+        @media (max-width: 768px) {
+            .process-simple {
+                flex-direction: column;
+            }
         }
-        .step-num {
-            width: 48px;
-            height: 48px;
+        .process-step-simple {
+            flex: 1;
+            text-align: center;
+            padding: 24px;
+        }
+        .step-number-simple {
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, #a855f7, #3b82f6);
-            border-radius: 12px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 800;
             color: white;
-            flex-shrink: 0;
+            margin: 0 auto 16px;
         }
-        .step-content h3 {
-            font-size: 20px;
+        .process-step-simple h3 {
+            font-size: 18px;
             margin-bottom: 8px;
             color: #fafafa;
         }
-        .step-content p {
-            color: #a1a1aa;
-            font-size: 15px;
-        }
-        
-        /* Who */
-        .who-section {
-            background: rgba(255,255,255,0.02);
-            padding: 80px 0;
-        }
-        .who-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        @media (max-width: 768px) {
-            .who-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .who-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-        }
-        .who-card .icon {
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
-        .who-card h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: #fafafa;
-        }
-        .who-card p {
+        .process-step-simple p {
             color: #a1a1aa;
             font-size: 14px;
         }
@@ -314,7 +299,7 @@
             border-bottom: none;
         }
         .faq-item h3 {
-            font-size: 18px;
+            font-size: 17px;
             margin-bottom: 12px;
             color: #fafafa;
         }
@@ -356,38 +341,32 @@
     <header class="hero">
         <div class="container">
             <div class="hero-badge">⚡ OpenClaw Deployment Service</div>
-            <h1>Get Your AI Agent Running in 48 Hours</h1>
+            <h1>Your Competitors Are Hiring AI Employees</h1>
             <p class="hero-subtitle">
-                OpenClaw is blowing up. Everyone sees the demos. 
-                <span class="highlight">Most people get stuck at day 2.</span>
-                We deploy fully-configured autonomous agents for businesses who want the result, not the learning curve.
+                OpenClaw lets you deploy autonomous agents that work 24/7. 
+                <span class="highlight">Most businesses get stuck at day 2.</span>
+                We get you deployed in 48 hours. Fully configured. Custom skills. Ready to work.
             </p>
-            <a href="#pricing" class="btn-primary">See Pricing →</a>
+            <a href="#pricing" class="btn-primary">Get Started →</a>
         </div>
     </header>
 
     <section class="problem-section">
         <div class="container">
             <div class="section-header">
-                <h2>Here's What Happens</h2>
-                <p>The typical OpenClaw journey vs. working with us</p>
+                <h2>The Demo-to-Reality Gap</h2>
             </div>
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <div class="problem-icon">📥</div>
-                    <h3>You Download It</h3>
-                    <p>"This looks amazing!"<br>Excitement level: 100%</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-icon">😵‍💫</div>
-                    <h3>You Hit the Wall</h3>
-                    <p>Docker configs, skill hubs, WebSocket issues<br>Day 2-3: Most people give up</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-icon">✅</div>
-                    <h3>We Handle Everything</h3>
-                    <p>Working agent in 48 hours<br>You skip straight to the value</p>
-                </div>
+            <div class="problem-box">
+                <p>
+                    You see the OpenClaw demos. Email triage. Calendar management. Document processing. 
+                    It looks amazing. You download it. Then you hit Docker configs, skill hub setup, 
+                    WebSocket issues, and 47 dependencies that don't work on your machine.
+                    <br><br>
+                    <strong>Three days later, you give up.</strong>
+                    <br><br>
+                    Meanwhile, your competitor just deployed an AI agent that handles customer support 
+                    while they sleep. The gap is widening.
+                </p>
             </div>
         </div>
     </section>
@@ -396,42 +375,76 @@
         <div class="container">
             <div class="section-header">
                 <h2>What You Get</h2>
-                <p>A fully-deployed autonomous agent that actually works</p>
+                <p>A fully-deployed AI employee in 48 hours</p>
             </div>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <div class="feature-check">✓</div>
-                    <div class="feature-content">
-                        <h3>Complete OpenClaw Setup</h3>
-                        <p>Gateway, sessions, memory system, skills — everything configured and tested. Not "here's a repo, good luck." Fully working system.</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>⚡ Working System</h3>
+                    <p>OpenClaw installed, configured, tested. Not "here's a repo" — a working agent ready to handle tasks.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛠️ Custom Skills</h3>
+                    <p>Whatever your business needs: email triage, Slack monitoring, document processing, CRM updates, data entry.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Self-Healing</h3>
+                    <p>When something breaks, it fixes itself. 24/7 operation without babysitting. Yellow/red alerts handled automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Your Data Stays Yours</h3>
+                    <p>Self-hosted on your hardware or ours. No data to OpenAI, no cloud leaks, full control. Compliance-ready.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤝 Human Integration</h3>
+                    <p>Via RentAHuman API, your agent can hire humans for physical-world tasks. Digital + physical execution.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📚 Training Included</h3>
+                    <p>Your team gets training, documentation, and 30 days of support. You actually know how to use what we built.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="usecases-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Businesses Use This For</h2>
+            </div>
+            <div class="usecase-list">
+                <div class="usecase-item">
+                    <div class="usecase-icon">📧</div>
+                    <div class="usecase-content">
+                        <h3>Email Triage</h3>
+                        <p>Agent reads incoming emails, sorts by urgency, drafts responses, flags what needs human attention. 6 hours of admin work → 30 minutes of review.</p>
                     </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-check">✓</div>
-                    <div class="feature-content">
-                        <h3>Custom Skills for Your Workflow</h3>
-                        <p>Email triage, calendar management, document processing, Slack monitoring — whatever your team actually needs. Not generic demos.</p>
+                <div class="usecase-item">
+                    <div class="usecase-icon">📅</div>
+                    <div class="usecase-content">
+                        <h3>Calendar Management</h3>
+                        <p>Preps briefs before meetings, schedules follow-ups, reschedules conflicts, blocks focus time. Your schedule runs itself.</p>
                     </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-check">✓</div>
-                    <div class="feature-content">
-                        <h3>Self-Healing Infrastructure</h3>
-                        <p>When something breaks (and it will), the system recovers automatically. 24/7 operation without babysitting. Yellow/red alerts handled without waking you up.</p>
+                <div class="usecase-item">
+                    <div class="usecase-icon">📄</div>
+                    <div class="usecase-content">
+                        <h3>Document Processing</h3>
+                        <p>Ingests documents, extracts key data, routes to right people, flags anomalies, archives properly. No more manual data entry.</p>
                     </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-check">✓</div>
-                    <div class="feature-content">
-                        <h3>Compliance-Ready Deployment</h3>
-                        <p>Self-hosted on your hardware. Data never leaves your building. Critical for law firms, healthcare, finance. Mac Studio in your office = full control.</p>
+                <div class="usecase-item">
+                    <div class="usecase-icon">💬</div>
+                    <div class="usecase-content">
+                        <h3>Customer Support</h3>
+                        <p>Answers common questions, routes complex issues, updates CRM, escalates when needed. 24/7 first-line support.</p>
                     </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-check">✓</div>
-                    <div class="feature-content">
-                        <h3>Team Training & Handoff</h3>
-                        <p>We don't disappear after setup. Your team gets training, documentation, and 30 days of support. You actually know how to use what we built.</p>
+                <div class="usecase-item">
+                    <div class="usecase-icon">🚚</div>
+                    <div class="usecase-content">
+                        <h3>Physical World Tasks</h3>
+                        <p>Via RentAHuman integration: hires humans for deliveries, site visits, document pickup, event staffing. Your agent isn't limited to the screen.</p>
                     </div>
                 </div>
             </div>
@@ -445,24 +458,24 @@
                 <p>One package. Everything included.</p>
             </div>
             <div class="pricing-card">
-                <div class="pricing-badge">Full Deployment</div>
-                <h3>OpenClaw Enterprise Setup</h3>
-                <p class="pricing-desc">Complete autonomous agent deployment for your business</p>
+                <div class="pricing-badge">Complete Deployment</div>
+                <h3>OpenClaw AI Employee</h3>
+                <p class="pricing-desc">Fully-deployed autonomous agent for your business</p>
                 <div class="pricing-price">$15,000</div>
-                <p class="pricing-note">One-time setup • 48-hour delivery</p>
+                <p class="pricing-note">One-time • 48-hour delivery • 30-day support</p>
                 <ul class="pricing-features">
-                    <li>Complete OpenClaw installation & configuration</li>
-                    <li>3-5 custom skills tailored to your workflow</li>
-                    <li>Self-healing heartbeat infrastructure</li>
-                    <li>Local model setup (data never leaves)</li>
+                    <li>Complete OpenClaw installation & config</li>
+                    <li>3-5 custom skills for your workflow</li>
+                    <li>Self-healing infrastructure</li>
+                    <li>Local or cloud deployment options</li>
+                    <li>RentAHuman integration included</li>
                     <li>Security audit & hardening</li>
                     <li>Team training session</li>
                     <li>Full documentation</li>
-                    <li>30 days support included</li>
                 </ul>
                 <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;">Book a Call →</a>
                 <p style="margin-top: 24px; font-size: 14px; color: #71717a;">
-                    Optional: $3,000/month ongoing support & new skill development
+                    Optional: $3,000/month ongoing support
                 </p>
             </div>
         </div>
@@ -472,55 +485,22 @@
         <div class="container">
             <div class="section-header">
                 <h2>How It Works</h2>
-                <p>From discovery to deployment in 48 hours</p>
             </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-num">1</div>
-                    <div class="step-content">
-                        <h3>Discovery Call (15 min)</h3>
-                        <p>You tell us what you want automated. We tell you what's possible. If it's not a fit, we say so. No sales pressure.</p>
-                    </div>
+            <div class="process-simple">
+                <div class="process-step-simple">
+                    <div class="step-number-simple">1</div>
+                    <h3>Discovery Call</h3>
+                    <p>15 minutes. We learn what you need. You learn what's possible.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-num">2</div>
-                    <div class="step-content">
-                        <h3>We Build Your Agent (24-48 hrs)</h3>
-                        <p>We handle the Docker setup, skill configuration, security hardening, and testing. You don't touch a config file.</p>
-                    </div>
+                <div class="process-step-simple">
+                    <div class="step-number-simple">2</div>
+                    <h3>We Build</h3>
+                    <p>24-48 hours. We handle all the technical setup.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-num">3</div>
-                    <div class="step-content">
-                        <h3>Demo & Handoff</h3>
-                        <p>We show you the working system, train your team, and hand over documentation. You're operational same day.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="who-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Who This Is For</h2>
-                <p>Compliance-first industries that need AI without the cloud</p>
-            </div>
-            <div class="who-grid">
-                <div class="who-card">
-                    <div class="icon">⚖️</div>
-                    <h3>Law Firms</h3>
-                    <p>Client data cannot touch third-party servers. We deploy on your hardware. Email triage, document review, calendar prep — all air-gapped.</p>
-                </div>
-                <div class="who-card">
-                    <div class="icon">💼</div>
-                    <h3>Private Equity</h3>
-                    <p>Deal flow management, LP reporting, due diligence tracking. All running locally with full audit trails.</p>
-                </div>
-                <div class="who-card">
-                    <div class="icon">📊</div>
-                    <h3>Accounting Firms</h3>
-                    <p>Tax season automation, client onboarding, document classification. HIPAA/SOC2 compliant by design.</p>
+                <div class="process-step-simple">
+                    <div class="step-number-simple">3</div>
+                    <h3>You're Live</h3>
+                    <p>Demo, training, handoff. Your AI employee starts working.</p>
                 </div>
             </div>
         </div>
@@ -533,43 +513,43 @@
             </div>
             <div class="faq-item">
                 <h3>Do I need technical knowledge?</h3>
-                <p>No. We handle everything. You get a working system and training on how to use it. If you can use Slack, you can use this.</p>
+                <p>No. We handle everything technical. You get a working system and training. If you can use Slack, you can use this.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is this different from ChatGPT?</h3>
+                <p>ChatGPT is a chat interface. OpenClaw is an autonomous agent that integrates with your tools (email, Slack, calendar, etc.) and takes actions without you typing prompts. It works while you sleep.</p>
             </div>
             <div class="faq-item">
                 <h3>Where does my data go?</h3>
-                <p>Nowhere. We deploy on a Mac Studio (or your existing hardware) in your office. All AI processing happens locally. No cloud. No third parties. Full control.</p>
+                <p>Your choice. We can deploy on a Mac Studio in your office (data never leaves) or on secure cloud infrastructure. You have full control.</p>
             </div>
             <div class="faq-item">
                 <h3>What if something breaks?</h3>
-                <p>The system is self-healing. Most issues resolve automatically within 30 seconds. For 30 days after deployment, we fix anything that needs human attention at no extra cost.</p>
+                <p>The system is self-healing — most issues resolve automatically. For 30 days after deployment, we fix anything that needs human attention at no extra cost.</p>
             </div>
             <div class="faq-item">
-                <h3>Can you add more skills later?</h3>
-                <p>Yes. Ongoing support is $3,000/month and includes new skill development, system optimization, and unlimited fixes. Or we can do one-off skills at $2,000 each.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What makes you different from other consultants?</h3>
-                <p>We specialize in one thing: OpenClaw deployment. We've done it multiple times. We have pre-built components. We can deliver in 48 hours what takes others 2 weeks.</p>
+                <h3>Can the agent hire real humans?</h3>
+                <p>Yes. Via RentAHuman integration, your agent can book humans for physical-world tasks: deliveries, site visits, document pickup, errands. Your agent isn't limited to digital work.</p>
             </div>
         </div>
     </section>
 
     <section class="cta-section" id="contact">
         <div class="container">
-            <h2>Ready to Skip the Learning Curve?</h2>
-            <p>Book a 15-minute discovery call. We'll tell you if OpenClaw is a fit for your workflow. No pitch, just honest assessment.</p>
+            <h2>Don't Let Your Competitors Get Ahead</h2>
+            <p>Book a 15-minute discovery call. We'll tell you if an AI agent makes sense for your business. No pitch, just honest assessment.</p>
             <a href="https://cal.com/neilpotdukhe/discovery" class="btn-primary" style="font-size: 18px; padding: 20px 40px;">
                 Book Discovery Call →
             </a>
             <p style="margin-top: 24px; font-size: 14px; color: #71717a;">
-                Or email: neil@neuroclaw.ai
+                Questions? neil@neuroclaw.ai
             </p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>OpenClaw Deployment Service • Deployed by NeuroClaw</p>
+            <p>OpenClaw Deployment Service</p>
         </div>
     </footer>
 </body>
